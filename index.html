@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reasons Why You Should Date Me!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- First Page -->
+    <div class="slide" id="slide1">
+        <div class="content">
+            <div class="title">
+                <h1>Reasons Why You Should Date Me!</h1>
+            </div>
+            <div class="gif-container">
+                <img src="you-have-to-date-me-ricky-berwick.gif" alt="funny gif" class="gif" />
+            </div>
+            <button class="next-button" onclick="goToNextPage('slide1', 'slide2', 'spin')">Next</button>
+        </div>
+    </div>
+
+    <!-- Second Page: "I wouldn't cheat, that's a big NO NO!" -->
+    <div class="slide" id="slide2" style="display: none;">
+        <div class="content">
+            <div class="title">
+                <h1>I wouldn't cheat, that's a big NO NO!</h1>
+            </div>
+            <div class="content-body">
+                <img src="no-nooo.gif" alt="cheating gif" class="gif" />
+            </div>
+            <button class="next-button" onclick="goToNextPage('slide2', 'slide3', 'slide-left')">Next</button>
+        </div>
+    </div>
+
+    <!-- Third Page: "I will treat you right and reply fast!" -->
+    <div class="slide" id="slide3" style="display: none;">
+        <div class="content">
+            <div class="title">
+                <h1>I will treat you right and reply fast!</h1>
+            </div>
+            <div class="content-body">
+                <img src="200w (1).gif" alt="treat you right gif" class="gif" />
+            </div>
+            <button class="next-button" onclick="goToNextPage('slide3', 'slide4', 'jump')">Next</button>
+        </div>
+    </div>
+
+    <!-- Fourth Page: "Oh, I forgot to tell you, I am SpiderMan!" -->
+    <div class="slide" id="slide4" style="display: none;">
+        <div class="content">
+            <div class="title">
+                <h1>Oh, I forgot to tell you, I am SpiderMan!</h1>
+            </div>
+            <div class="content-body">
+                <img src="spoder-man-spoderman.gif" alt="spiderman gif" class="gif" />
+            </div>
+            <button class="next-button" onclick="goToNextPage('slide4', 'slide5', 'slide-up')">Next</button>
+        </div>
+    </div>
+
+    <!-- Fifth Page: "Lastly, you're beautiful! <3333333" -->
+    <div class="slide" id="slide5" style="display: none;">
+        <div class="content">
+            <div class="title">
+                <h1>Lastly, you're beautiful! <3333333</h1>
+            </div>
+            <div class="content-body">
+                <img src="WhatsApp Image 2024-12-10 at 21.32.28_beacdb44.jpg" alt="beautiful image" class="img" />
+            </div>
+            <button class="next-button" onclick="goToNextPage('slide5', 'slide1', 'spin-reverse')">Restart</button>
+        </div>
+    </div>
+
+    <script>
+        function goToNextPage(currentSlideId, nextSlideId, animationClass) {
+            const currentSlide = document.getElementById(currentSlideId);
+            const nextSlide = document.getElementById(nextSlideId);
+
+            currentSlide.style.display = 'none'; // Hide the current slide
+            nextSlide.style.display = 'block';   // Show the next slide
+
+            // Add animation class for the transition
+            nextSlide.classList.add(animationClass);
+
+            // Remove the animation class after the transition ends
+            setTimeout(() => {
+                nextSlide.classList.remove(animationClass);
+            }, 800); // Adjust this time based on your animation duration
+        }
+    </script>
+</body>
+</html>

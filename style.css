@@ -1,0 +1,171 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic styles for the page */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  margin: 0;
+}
+
+/* Main slide container */
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  text-align: center;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+/* Center content inside each slide */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+/* Title styling */
+.title h1 {
+  font-size: 3rem;
+  color: #ff6347;
+  margin-bottom: 20px;
+}
+
+/* GIF container styling */
+.gif-container {
+  margin-top: 20px;
+}
+
+.gif, .img {
+  max-width: 70%;
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.gif:hover, .img:hover {
+  transform: scale(1.05);
+}
+
+/* Button styling */
+.next-button {
+  margin-top: 30px;
+  padding: 15px 30px;
+  background-color: #32CD32; /* Green color */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.next-button:hover {
+  background-color: #28a745;
+}
+
+/* Resize the image on the 5th page */
+#slide5 .img {
+  max-width: 50%; /* Adjust to your desired size */
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Animation classes for page transitions */
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+      opacity: 0;
+  }
+  100% {
+      transform: rotate(360deg);
+      opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes jump {
+  0% {
+      transform: translateY(0);
+      opacity: 0;
+  }
+  50% {
+      transform: translateY(-30px);
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+      transform: translateY(100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes spinReverse {
+  0% {
+      transform: rotate(0deg);
+      opacity: 0;
+  }
+  100% {
+      transform: rotate(-360deg);
+      opacity: 1;
+  }
+}
+
+/* Apply animation classes to the slide */
+.spin {
+  animation: spin 1s forwards;
+}
+
+.slide-left {
+  animation: slideLeft 1s forwards;
+}
+
+.jump {
+  animation: jump 1s forwards;
+}
+
+.slide-up {
+  animation: slideUp 1s forwards;
+}
+
+.spin-reverse {
+  animation: spinReverse 1s forwards;
+}
